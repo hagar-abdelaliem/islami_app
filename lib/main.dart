@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/shared/styles/themes.dart';
-import 'home.dart';
+import 'layouts/home_layout.dart';
 
 void main() {
   runApp(const MyApp());

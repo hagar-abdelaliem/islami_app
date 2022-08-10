@@ -23,8 +23,8 @@ class MyTheme{
       backgroundColor: standardColor,
       selectedItemColor: selectedColor,
       unselectedItemColor: Colors.white,
-      selectedIconTheme: IconThemeData(size: 40),
-      unselectedIconTheme: IconThemeData(size: 40),
+      selectedIconTheme: IconThemeData(size: 35),
+      unselectedIconTheme: IconThemeData(size: 35),
       showUnselectedLabels: false,
     ),
   );
