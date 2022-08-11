@@ -10,6 +10,7 @@ class MyTheme{
       centerTitle: true,
       backgroundColor: Colors.transparent,
       elevation: 0,
+      iconTheme: IconThemeData(color: selectedColor),
     ),
     textTheme: const TextTheme(
       headline1: TextStyle(
@@ -24,7 +25,6 @@ class MyTheme{
       ),
       headline3: TextStyle(
         fontSize: 25,
-        //fontWeight: FontWeight.w300,
         color: selectedColor,
         )
     ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami/layouts/quran_layout/sura_content.dart';
 import 'package:islami/shared/styles/themes.dart';
 import 'layouts/home_layout.dart';
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         Home.routeNam: (context)=>Home(),
+        SuraContent.routName: (context)=>SuraContent(),
       },
       initialRoute: Home.routeNam,
       theme: MyTheme.lightTheme,
