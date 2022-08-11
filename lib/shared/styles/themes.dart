@@ -13,10 +13,20 @@ class MyTheme{
     ),
     textTheme: const TextTheme(
       headline1: TextStyle(
-        color: Color(0xff242424),
+        color: selectedColor,
         fontSize: 30,
         fontWeight: FontWeight.bold,
-      )
+      ),
+      headline2: TextStyle(
+        fontSize: 25,
+        fontWeight: FontWeight.bold,
+        color: selectedColor,
+      ),
+      headline3: TextStyle(
+        fontSize: 25,
+        //fontWeight: FontWeight.w300,
+        color: selectedColor,
+        )
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       type: BottomNavigationBarType.fixed,
