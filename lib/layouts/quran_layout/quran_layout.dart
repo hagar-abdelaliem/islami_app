@@ -43,7 +43,7 @@ class QuranScreen extends StatelessWidget {
           child: ListView(
             children: [
               for(int i =0;i<sura.length;i++)
-                Ayats(sura[i].name, sura[i].ayatNumber),
+                Ayats(sura[i].name, sura[i].ayatNumber, i+1),
             ],
           )
         )
