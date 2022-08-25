@@ -15,7 +15,8 @@ class Ayats extends StatelessWidget {
           title: Text('${num}', style: Theme.of(context).textTheme.headline2,),
           trailing: Text(name, style: Theme.of(context).textTheme.headline2,),
           onTap: (){
-          Navigator.pushNamed(context, SuraContent.routName, arguments:[name,index]);
+          Navigator.pushNamed(context, SuraContent.routeName,
+                arguments: [name, index]);
           },
         ),
         Divider(color: Theme.of(context).primaryColor,),

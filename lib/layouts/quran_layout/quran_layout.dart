@@ -40,13 +40,12 @@ class QuranScreen extends StatelessWidget {
         ),
         Divider(thickness: 3, color: Theme.of(context).primaryColor,),
         Expanded(
-          child: ListView(
-            children: [
-              for(int i =0;i<sura.length;i++)
-                Ayats(sura[i].name, sura[i].ayatNumber, i+1),
-            ],
-          )
-        )
+            child: ListView.builder(
+          itemCount: sura.length,
+          itemBuilder: (context, i) {
+            return Ayats(sura[i].name, sura[i].ayatNumber, i + 1);
+          },
+        ))
       ],
     );
   }

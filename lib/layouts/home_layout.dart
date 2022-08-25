@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami/layouts/ahadeth_layout.dart';
+import 'package:islami/layouts/ahadeth_layout/ahadeth_layout.dart';
 import 'package:islami/layouts/quran_layout/quran_layout.dart';
 import 'package:islami/layouts/radio_layout.dart';
 import 'package:islami/layouts/setting_layout.dart';
@@ -7,7 +7,8 @@ import 'package:islami/layouts/taspeh_layout.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
-  static const String routeNam='Home';
+  static const String routeName = 'Home';
+
   @override
   State<Home> createState() => _HomeState();
 }
