@@ -1,30 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:islami/models/hadethModel.dart';
 
-class SuraContent extends StatefulWidget {
-  static const String routeName = 'suraContent';
+class HadethContent extends StatelessWidget {
+  static const String routeName = 'HadethContent';
+  var hadeth;
 
-  @override
-  State<SuraContent> createState() => _SuraContentState();
-}
-
-class _SuraContentState extends State<SuraContent> {
-  var suraName;
-  String dataFile = "";
-
-  Future<void> loadFile(int index) async {
-    final String content =
-        await rootBundle.loadString('assets/files/${index}.txt');
-    setState(() {
-      dataFile = content;
-    });
-  }
+  Future<void> loadFile() async {}
 
   @override
   Widget build(BuildContext context) {
-    suraName = ModalRoute.of(context)?.settings.arguments as List;
-    loadFile(suraName[1]);
+    hadeth = ModalRoute.of(context)?.settings.arguments as HadethModel;
     return Stack(
       children: [
         Image.asset('assets/images/main_background.png',
@@ -41,18 +26,27 @@ class _SuraContentState extends State<SuraContent> {
               color: const Color.fromRGBO(248, 248, 248, 0.6),
               borderRadius: BorderRadius.circular(15),
             ),
-            margin: const EdgeInsets.only(top: 30,left: 50,right: 50,bottom: 70),
+            margin:
+                const EdgeInsets.only(top: 30, left: 50, right: 50, bottom: 70),
             child: Column(
               children: [
                 const SizedBox(height: 15),
-                Text('سورة '+suraName[0],style: Theme.of(context).textTheme.headline2,),
-                Divider(thickness: 1, color: Theme.of(context).primaryColor,indent: 30,endIndent: 30,),
+                Text(
+                  hadeth.title,
+                  style: Theme.of(context).textTheme.headline2,
+                ),
+                Divider(
+                  thickness: 1,
+                  color: Theme.of(context).primaryColor,
+                  indent: 30,
+                  endIndent: 30,
+                ),
                 Expanded(
                   child: ListView.builder(
                     itemCount: 1,
                     itemBuilder: (context, i) {
                       return Text(
-                        dataFile,
+                        hadeth.body,
                         textDirection: TextDirection.rtl,
                         style: const TextStyle(fontSize: 20),
                         textAlign: TextAlign.center,
