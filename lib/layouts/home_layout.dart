@@ -14,13 +14,20 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int currentIndex=0;
-  List<Widget> screens = [RadioScreen(), TaspehScreen(), AhadethScreen(), QuranScreen(), SettingScreen()];
+  int currentIndex = 0;
+  List<Widget> screens = [
+    RadioScreen(),
+    TaspehScreen(),
+    AhadethScreen(),
+    QuranScreen()
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset('assets/images/main_background.png',
+        Image.asset(
+          'assets/images/main_background.png',
           width: double.infinity,
           height: double.infinity,
           fit: BoxFit.fill,
@@ -31,12 +38,26 @@ class _HomeState extends State<Home> {
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentIndex,
             onTap: (index){setState(() {currentIndex=index;});},
-            items: const [
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/radio.png')),label: 'Radio'),
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/sebha.png')),label: 'Taspeh'),
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/ahadeth.png')),label: 'Ahadeth'),
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/quran.png')),label: 'Quran'),
-              BottomNavigationBarItem(icon: Icon(Icons.settings),label: 'Settings'),
+            items: [
+              BottomNavigationBarItem(
+                  icon: ImageIcon(AssetImage('assets/images/radio.png')),
+                  label: 'Radio'),
+              BottomNavigationBarItem(
+                  icon: ImageIcon(AssetImage('assets/images/sebha.png')),
+                  label: 'Taspeh'),
+              BottomNavigationBarItem(
+                  icon: ImageIcon(AssetImage('assets/images/ahadeth.png')),
+                  label: 'Ahadeth'),
+              BottomNavigationBarItem(
+                  icon: ImageIcon(AssetImage('assets/images/quran.png')),
+                  label: 'Quran'),
+              BottomNavigationBarItem(
+                  icon: IconButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, SettingScreen.routeName);
+                      },
+                      icon: Icon(Icons.settings)),
+                  label: 'Settings'),
             ],
           ),
           body: screens[currentIndex],
